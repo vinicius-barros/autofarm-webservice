@@ -1,6 +1,6 @@
 package br.com.autofarm
 
-class Acao {
+class Acao implements Comparable<Acao> {
 	TipoAcao tipo
 	Date horaInsercao
 	Boolean sucesso
@@ -9,5 +9,9 @@ class Acao {
 	static belongsTo = [granja: Granja]
 
 	static constraints = {
+	}
+
+	int compareTo(Acao o) {
+		return this.horaInsercao.compareTo(o.horaInsercao)
 	}
 }

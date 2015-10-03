@@ -1,14 +1,14 @@
 package br.com.autofarm
 
 enum TipoAcao {
-	LIGAR_LAMPADA('Ligar Lâmpada'),
-	DESLIGAR_LAMPADA('Desligar Lâmpada'),
+	LIGAR_LAMPADAS('Ligar Lâmpadas'),
+	DESLIGAR_LAMPADAS('Desligar Lâmpadas'),
 
-	LIGA_VENTILADORES('Ligar ventiladores'),
+	LIGAR_VENTILADORES('Ligar ventiladores'),
 	DESLIGAR_VENTILADORES('Desligar ventiladores'),
 
-	ABRIR_LONA('Abrir lona'),
-	FECHAR_LONA('Fechar lona')
+	ABRIR_LONAS('Abrir lonas'),
+	FECHAR_LONAS('Fechar lonas')
 
 	String descricao
 
