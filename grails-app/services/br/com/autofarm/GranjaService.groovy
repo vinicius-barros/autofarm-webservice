@@ -82,4 +82,17 @@ class GranjaService {
         granja.save()
         acao
     }
+
+    Granja registraTemperatura (Long id , BigDecimal temperatura){
+
+        Granja granja = Granja.get(id)
+        granja.temperaturaAtual = temperatura
+
+        //TODO: Mover lógica para engine de regras
+        if(temperatura < 20){
+            ligueLampadas(id)
+        }
+
+        granja.save ()
+    }
 }

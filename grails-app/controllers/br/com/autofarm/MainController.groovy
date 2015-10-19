@@ -1,8 +1,12 @@
 package br.com.autofarm
 
+import grails.converters.JSON
+
 class MainController {
 
     def granjaService
+
+    static allowedMethods = ['registraTemperatura':'PUT' ]
 
     def index() {
         Granja granjaPrincipal = granjaService.granjaPrincipal
@@ -50,5 +54,15 @@ class MainController {
         granjaService.fecheLonas(id)
 
         redirect action: 'index'
+    }
+
+    def registraTemperatura () {
+
+        Long id = params.long('id')
+        BigDecimal temperatura = params.float('temperatura')
+
+        granjaService.registraTemperatura ( id, temperatura)
+
+        render text : [success: true] as JSON
     }
 }
